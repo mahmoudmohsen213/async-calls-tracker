@@ -1,0 +1,19 @@
+{
+  "name": "async-calls-tracker",
+  "version": "1.0.0",
+  "description": "A module to track a collection of async calls, combine there results, and notify the main caller when they all return.",
+  "main": "async-calls-tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmoudmohsen213/async-calls-tracker.git"
+  },
+  "author": "mahmoudmohsen213 (https://github.com/mahmoudmohsen213)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mahmoudmohsen213/async-calls-tracker/issues"
+  },
+  "homepage": "https://github.com/mahmoudmohsen213/async-calls-tracker#readme"
+}
