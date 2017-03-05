@@ -7,7 +7,7 @@ Imagine having a number of asynchronous functions, which will be called one afte
 ## Usage:
 The module exports a constructor function which can be used to create new instances of the object
 ```
-var trackerFactory = require(async-calls-tracker);
+var trackerFactory = require('async-calls-tracker');
 var tracker1 = trackerFactory();
 var tracker2 = trackerFactory();
 ```
@@ -49,7 +49,7 @@ tracker1.invoke();
 ```
 ## Full code sample:
 ```
-var trackerFactory = require('./async-calls-tracker.js');
+var trackerFactory = require('async-calls-tracker');
 var tracker = trackerFactory();
 
 function test1(param1, param2, callback){
