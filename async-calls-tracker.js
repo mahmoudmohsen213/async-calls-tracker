@@ -36,7 +36,7 @@ function tracker(){
 
 	// accepts the function to be observed, in addition to an arbtrary number of
 	// parameters to be passed to the observed function on its invokation
-	self.addCall = function(observedCall, ...args){
+	self.add = function(observedCall, ...args){
 		if(self.runningCalls > 0)
 			throw new Error('this tracker is already running');
 		
@@ -50,7 +50,7 @@ function tracker(){
 	};
 
 	// invoke all async calls
-	self.invokeCalls = function(){
+	self.invoke = function(){
 		if(self.runningCalls > 0)
 			throw new Error('this tracker is already running');
 		
