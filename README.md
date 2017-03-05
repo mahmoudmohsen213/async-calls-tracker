@@ -12,15 +12,16 @@ var tracker1 = trackerFactory();
 var tracker2 = trackerFactory();
 ```
 here tracker1 and tracker2 are two distinct objects.
+
 The tracker exposes three functions .on(), .addcall(), and .invokeCalls().
-### .on(eventName, eventHandler)
+#### .on(eventName, eventHandler)
 Used to register event handlers, currently there is only one event in use which is 'end' event. eventName should be a string for example 'end'. eventHandler should be a function object. The 'end' event is triggered after every observed call has invoked its callback, which signals its return. The 'end' event handler should take one argument which is an array of arrays, the i-th array is a collection of the arguments passed to the callback by i-th observed calls in the order of addition.
 ```
 tracker1.on('end', function(args){
 	console.log(args);
 });
 ```
-### .add(async_function[, ...args])
+#### .add(async_function[, ...args])
 Used to add an asynchronous function to be observed. The other parameters are the parameters to be passed to the async_function on its invokation, except the callback. The module injects a function as a callback to collect the callback arguments, and notify the main caller through the 'end' event handler.
 ```
 // assume test1 and test2 are two asynchronous functions
@@ -41,7 +42,7 @@ function test3(param1, param2, callback){
 	setTimeout(callback, 6000, param1, param2);
 }
 ```
-### .invoke()
+#### .invoke()
 Calling this function will invoke all the added asynchronous functions. Until the 'end' event is triggered, any attempt to add a new asynchronous function, or calling .invoke() again will result in an error. After all functions call their callbacks, the 'end' event will be triggered.
 ```
 tracker1.invoke();
