@@ -16,10 +16,10 @@ function tracker(){
 	// set the event handler of each event
 	self.on = function(eventName, eventHandler){
 		if(typeof eventName !== 'string')
-			throw new TypeError('eventName must be a string object');
+			throw new TypeError('the first argument must be a string object');
 		
 		if(typeof eventHandler !== 'function')
-			throw new TypeError('eventHandler must be a function object');
+			throw new TypeError('the second argument must be a function object');
 		
 		self.eventHandlers[eventName] = eventHandler;
 		return self;
@@ -41,7 +41,7 @@ function tracker(){
 			throw new Error('this tracker is already running');
 		
 		if(typeof observedCall !== 'function')
-			throw new TypeError('observedCall must be a function object');
+			throw new TypeError('the first argument must be a function object');
 		
 		self.observedCalls.push(observedCall);
 		self.observedCallsArguments.push(args);
