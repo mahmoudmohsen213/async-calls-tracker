@@ -4,7 +4,7 @@ A node module that tracks a collection of async calls, and notify the main calle
 ## Use case:
 Imagine having a number of asynchronous functions, which will be called one after the other and executed asynchronously but we want to collect the returned values provided through callbacks from all functions, and use them all together.
 
-## uasge:
+## Usage:
 The module exports a constructor function which can be used to create new instances of the object
 ```
 var trackerFactory = require(async-calls-tracker);
