@@ -1,6 +1,6 @@
 {
   "name": "async-calls-tracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node module that tracks a collection of async calls, and notify the main caller when all of them are done through the 'end' event handler provided, and send the arguments passed to the callbacks of the async calls.",
   "main": "async-calls-tracker.js",
   "scripts": {
