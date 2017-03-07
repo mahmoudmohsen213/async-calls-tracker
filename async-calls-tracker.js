@@ -1,7 +1,8 @@
-// this is a module that tracks a collection of async calls, and notify the
-// main caller when all of them are done through the onDone function, and send
-// the arguments passed to the callbacks of the async calls as an array of
-// arguments objects
+/* 
+ * A node module that tracks a collection of async calls, and notify the main 
+ * caller when all of them are done through a provided event handler, and forward
+ * the arguments passed to the callbacks by the observed calls.
+ */
 
 const EVENT_END = 'end';
 
