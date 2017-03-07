@@ -1,5 +1,5 @@
 # async-calls-tracker
-A node module that tracks a collection of async calls, and notify the main caller when all of them are done through the 'end' event handler provided, and send the arguments passed to the callbacks of the async calls.
+A node module that tracks a collection of async calls, and notify the main caller when all of them are done through a provided event handler, and forward the arguments passed to the callbacks by the observed calls.
 
 ## Use case:
 Imagine having a number of asynchronous functions, which will be called one after the other and executed asynchronously but we want to collect the returned values provided through callbacks from all functions, and use them all together.
