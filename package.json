@@ -1,11 +1,12 @@
 {
   "name": "async-calls-tracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A node module that tracks a collection of async calls, and notify the main caller when all of them are done through the 'end' event handler provided, and send the arguments passed to the callbacks of the async calls.",
   "main": "async-calls-tracker.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": ["async", "asynchronous", "observer", "tracker", "merge"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mahmoudmohsen213/async-calls-tracker.git"
