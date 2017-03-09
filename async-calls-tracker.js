@@ -31,7 +31,7 @@ function tracker(){
 		self.collectedCallbackArguments[callbackArgsWrapper.callerIndex] = callbackArgsWrapper.args;
 		self.runningCalls--;
 		
-		if((self.runningCalls === 0)&&(self.eventHandlers[EVENT_END]))
+		if((self.runningCalls === 0) && (self.eventHandlers[EVENT_END]))
 			self.eventHandlers[EVENT_END](self.collectedCallbackArguments);
 	};
 
