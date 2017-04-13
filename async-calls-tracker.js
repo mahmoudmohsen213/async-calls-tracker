@@ -5,11 +5,13 @@
  */
 
 const EVENT_END = 'end';
+const EVENT_CALLBACK = 'callback';
 
 function tracker(){
-	var self = this;
+	const self = this;
 	self.observedCalls = [];
 	self.observedCallsArguments = [];
+	self.callbacks = [];
 	self.collectedCallbackArguments = [];
 	self.eventHandlers = [];
 	self.runningCalls = 0;
@@ -31,22 +33,40 @@ function tracker(){
 		self.collectedCallbackArguments[callbackArgsWrapper.callerIndex] = callbackArgsWrapper.args;
 		self.runningCalls--;
 		
+		if(self.callbacks[callbackArgsWrapper.callerIndex])
+			self.callbacks[callbackArgsWrapper.callerIndex](...(callbackArgsWrapper.args));
+		
+		if(self.eventHandlers[EVENT_CALLBACK])
+			self.eventHandlers[EVENT_CALLBACK](...(callbackArgsWrapper.args));
+		
 		if((self.runningCalls === 0) && (self.eventHandlers[EVENT_END]))
 			self.eventHandlers[EVENT_END](self.collectedCallbackArguments);
 	};
 
 	// accepts the function to be observed, in addition to an arbtrary number of
 	// parameters to be passed to the observed function on its invokation
-	self.add = function(observedCall, ...args){
-		if(self.runningCalls > 0)
-			throw new Error('this tracker is already running');
-		
+	self.add = function(observedCall, ...args){		
 		if(typeof observedCall !== 'function')
 			throw new TypeError('the first argument must be a function object');
 		
 		self.observedCalls.push(observedCall);
 		self.observedCallsArguments.push(args);
-		self.collectedCallbackArguments.push(0);
+		self.callbacks.push(null);
+		self.collectedCallbackArguments.push(null);
+		return self;
+	};
+	
+	self.addWithCallback = function(observedCall, callback, ...args){		
+		if(typeof observedCall !== 'function')
+			throw new TypeError('the first argument must be a function object');
+		
+		if(typeof callback !== 'function')
+			throw new TypeError('the second argument must be a function object');
+		
+		self.observedCalls.push(observedCall);
+		self.observedCallsArguments.push(args);
+		self.callbacks.push(callback);
+		self.collectedCallbackArguments.push(null);
 		return self;
 	};
 
