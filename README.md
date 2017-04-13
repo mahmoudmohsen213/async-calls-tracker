@@ -54,7 +54,7 @@ function test3(param1, param2, callback){
 }
 ```
 #### .addWithCallback(async_function, callback[, ...args])
-It is the same as the previous function, but takes the second paramter as a callback specific to the newly added async function to be call when the newly added function call its callback.
+It is the same as the previous function, but takes the second paramter as a callback specific to the newly added async function to be called when the newly added function call its callback.
 ```
 function test3(param1, param2, callback){
     setTimeout(function(){
