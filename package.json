@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["async", "asynchronous", "observer", "tracker", "merge"],
+  "keywords": ["async", "asynchronous", "observer", "tracker", "fork-join", "merge"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mahmoudmohsen213/async-calls-tracker.git"
