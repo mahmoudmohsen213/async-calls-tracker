@@ -1,3 +1,5 @@
+:no_entry: [DEPRECATED] Active at https://github.com/mahmoudmohsen213/forkjs
+
 # async-calls-tracker
 A node module that tracks a collection of async calls, and notify the main caller when all of them are done through a provided event handler, and forward the arguments passed to the callbacks by the observed calls.
 
